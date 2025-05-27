@@ -1,53 +1,47 @@
 # include <stdio.h>
 
-int main () {
-
-int torre = 1;
-int bispo = 2;
-
-while (torre <= 5)
-{
-    printf(" A PEÇA TORRE MOVEU PARA A DIREITA. \n");
- torre++;
-
- 
-}
-printf("\n");
-
-
-do
-{
- printf(" A PEÇA BISPO MOVEU PARA CIMA, DIREITA. \n");
- bispo++;
-} while ( bispo <= 6);
-printf("\n");
-
-
-for (int rainha = 1; rainha <= 8; rainha++)
-{
-   printf(" A PEÇA RAINHA MOVEU PARA A ESQUERDA. \n");
+void torre( int quantidade ){
+    if ( quantidade > 0 )
+    {   
+        printf(" A PEÇA TORRE MOVEU PARA A DIREITA. \n");
+        torre( quantidade - 1 );
+    }
 }
 
-printf("\n");
-
-
-for (int cavalo = 1; cavalo <= 2 ; cavalo++){
-
-   printf(" A PEÇA CAVALO MOVEU PARA BAIXO. \n");
-   while (cavalo == 2 )
-
-   {
-     printf(" A PEÇA CAVALO MOVEU PARA ESQUERDA. \n");
-
-     cavalo++;
-
-   }
-  
+void bispo( int quantidade ){
+    if ( quantidade > 0 )
+    {
+        printf(" A PEÇA BISPO MOVEU PARA CIMA, DIREITA. \n");
+        bispo ( quantidade - 1);
+    }
+    
 }
-printf("\n");
+
+
+void rainha( int quantidade ){
+    if ( quantidade > 0 )
+    {
+    printf(" A PEÇA RAINHA MOVEU PARA A ESQUERDA. \n");
+    rainha( quantidade - 1) ; 
+    }
+}
 
 
 
-return 0;
+int main() {
+    torre(5);
+    bispo(5);
+    rainha(8);
+    
 
+    for (int quantidade = 1, valor = 0; quantidade >= valor; quantidade--){
+        {
+         printf(" O CAVALO MOVEU PARA CIMA. \n");
+        }
+    if (quantidade == valor)
+    {
+        printf(" O CAVALO MOVEU PARA A DREITA. \n");
+    }
+    
+    }
 }
